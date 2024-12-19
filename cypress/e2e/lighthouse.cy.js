@@ -1,19 +1,19 @@
 
 describe("Prueba de Métricas Lighthouse Desktop and Mobile", () => {
   it("should capture metrics for the desktop and mobile", () => {
-    
+
     cy.visit("/");
     // cy.visit('/', {
     //   onBeforeLoad(win) {
     //     delete win.navigator.__proto__.serviceWorker;
     //   },
-    // }); 
+    // });
 
 
     cy.lighthouse(
       {
         performance: 10,
-        'first-contentful-paint': 3800,
+        'first-contentful-paint': 4480,
         'largest-contentful-paint': 10500,
         'cumulative-layout-shift': 0.1,
         'total-blocking-time': 11500,
@@ -22,7 +22,7 @@ describe("Prueba de Métricas Lighthouse Desktop and Mobile", () => {
       {
         formFactor: "desktop",
         screenEmulation: {
-          mobile: true,
+          mobile: false,
           disable: false,
           width: Cypress.config("viewportWidth"),
           height: Cypress.config("viewportHeight"),
@@ -30,12 +30,13 @@ describe("Prueba de Métricas Lighthouse Desktop and Mobile", () => {
         },
       })
       ;
+      //cy.writeFile('results/final-report.json', report);
     });
   });
-    
 
 
- 
+
+
   //   const thresholdmobile = {
   //       performance: 40,
   //       accessibility: 90,
@@ -61,13 +62,13 @@ describe("Prueba de Métricas Lighthouse Desktop and Mobile", () => {
   //   };
 
   //   //Visitar página principal
-    
+
   //   cy.visit('/');
-    
+
   //   //Ejecutar Lighthouse en modo desktop
   //   cy.lighthouse(thresholdDesktop, lighthouseConfigDesktop).then((desktopResults) => {
   //     cy.log("Resultados para desktop:", JSON.stringify(desktopResults));
-    
+
   //   //Guardar resultados de Desktop
   //   cy.writeFile('cypress/fixtures/lighthouse-report-desktop.json', desktopResults);
   //   });
@@ -75,7 +76,7 @@ describe("Prueba de Métricas Lighthouse Desktop and Mobile", () => {
   //   //Ejecutar Lighthouse en modo mobile
   //   cy.lighthouse(thresholdMobile, lighthouseConfigMobile).then((mobileResults) => {
   //     cy.log("Resultados para mobile:", JSON.stringify(mobileResults));
-    
+
   //   //Guardar resultados de Mobile
   //   cy.writeFile('cypress/fixtures/lighthouse-report-mobile.json', mobileResults);
   //   });

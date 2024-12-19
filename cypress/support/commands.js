@@ -23,5 +23,5 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import "cypress-web-vitals";
 import "@cypress-audit/lighthouse/commands";
+import "cypress-web-vitals";
