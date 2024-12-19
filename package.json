@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@cypress-audit/lighthouse": "^1.4.2",
+    "@cypress-audit/pally": "^1.4.2",
+    "cypress": "^13.17.0",
+    "cypress-real-events": "^1.13.0",
+    "cypress-web-vitals": "^4.1.2",
+    "lighthouse": "^12.3.0",
+    "web-vitals": "^4.2.4"
+  },
+  "dependencies":{
+    "google-spreadsheet": "4.1.4",
+    "googleapis": "144.0.0"
+  }
+}
